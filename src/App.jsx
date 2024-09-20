@@ -1,5 +1,4 @@
 //  import { useState } from 'react'
-
 //  import reactLogo from './assets/react.svg'
 //  import viteLogo from '/vite.svg'
 //  import './App.css'
@@ -34,60 +33,17 @@
 // }
 
 // export default App
-// import { people } from './data.js';
-// import { getImageUrl } from './utils.js';
-
-// export default function List() {
-//   const chemists = people.filter(person =>
-//     person.profession !== 'chemist'
-//   );
-
-//   const everryoneElse = people.filter(person =>
-//     person.profession !== 'chemist'
-//   );
-//   // ตะกร้าสินค้า
-//   cons [cart, setCart] = useState([])
-
-//   function addToCart(prd){
-//     //เพิ่มรายการสินค้าในตะกร้า
-//     //cart [ {prd} ]
-//     setArtists( // Replace the state
-//       [ // with a new array
-//         ...artists, // that contains all the old items
-//         { id: nextId++, name: name } // and one new item at the end
-//       ]
-//     );
-//     console.log(cart);
-//       }
-//       return (
-  
-//         <article>
-//           <h1>Shopping Cart</h1>
-//           {cart.map(product=>
-//           <p key={product.id}>{product.name}</p> )}
-//           <ul>{listItems}</ul>
-//         </article>);
-          
-//       }
-
 import { useState } from 'react';
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
 export default function List() {
-  const listItems = people.map(person =>
-    <li key={person.id}>
-      <img
-        src={getImageUrl(person)}
-        alt={person.name}
-        onClick={()=>addToCart(person)}
-      />
-      <p>
-        <b>{person.name}</b>
-          {' ' + person.profession + ' '}
-          known for {person.accomplishment}
-      </p>
-    </li>
+  const chemists = people.filter(person =>
+    person.profession === 'chemist'
+  );
+ 
+  const everryoneElse = people.filter(person =>
+    person.profession !== 'chemist'
   );
 
   //ตะกร้าสินค้า
@@ -105,15 +61,30 @@ export default function List() {
     console.log(cart);
 
   }
-  return (
-  
-  <article>
-    <h1>Shopping Cart</h1>
-    {cart.map(product=>
-    <p key={product.id}>{product.name}</p> )}
-    <ul>{listItems}</ul>
-  </article>);
-    
-}
+      return (
+        <article>
+          <h1>Shopping Cart</h1>
+          {cart.map((product) => (
+            <p key={product.id}>{product.name}</p>
+          ))}
+     
+          <p>ชื่อสินค้า</p>
+        <hr />
+        <h1>Scientists</h1>
+        <ul>{chemists.map((person) => (
+          <li key={person.id}>
+            <img
+            src={getImageUrl(person)}
+            alt={person.name}
+            onClick={() => addToCart(person)}
+            />
+          </li>
+        )
+      )
+      }
+        </ul>
+     </article>
+    );
+    }
 
 
