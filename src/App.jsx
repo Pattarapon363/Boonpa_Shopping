@@ -127,13 +127,7 @@ function App() {
           <p>ส่วนลด: {discount * 79}%</p>
           <p className="font-bold">รวมค่าจัดส่ง: {totalWithShipping}฿</p>
 
-          {/* <input
-            // type="text"
-            // placeholder="Coupon Code"
-            // onBlur={(e) => handleApplyDiscount(e.target.value)}
-            // className="border p-2 mt-2 w-full rounded"
-          /> */}
-          {/* {discountError && <p className="text-red-500">{discountError}</p>} */}
+    
         </div>
       </div>
     </div>
