@@ -123,7 +123,7 @@ function App() {
         )}
         <div className="mt-4 p-4 bg-gray-100 rounded shadow-md">
           <p>รวม: {total}฿</p>
-          <p>ค่าจัดส่ง: 97฿</p>
+          <p>ค่าจัดส่ง: 100฿</p>
           <p>ส่วนลด: {discount * 79}%</p>
           <p className="font-bold">รวมค่าจัดส่ง: {totalWithShipping}฿</p>
 
